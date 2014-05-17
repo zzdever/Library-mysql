@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>图书馆管理系统</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>400</width>
+     <height>300</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>800</width>
+     <height>600</height>
+    </size>
+   </property>
+   <layout class="QHBoxLayout" name="mainLayout">
+    <item>
+     <layout class="QVBoxLayout" name="centralLayout">
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="loginTab">
+         <attribute name="title">
+          <string>登录</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="loginTabLayout">
+          <item>
+           <layout class="QVBoxLayout" name="loginLayout">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <property name="leftMargin">
+             <number>60</number>
+            </property>
+            <property name="topMargin">
+             <number>15</number>
+            </property>
+            <property name="rightMargin">
+             <number>60</number>
+            </property>
+            <property name="bottomMargin">
+             <number>15</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" name="userLayout">
+              <item>
+               <widget class="QLabel" name="userLabel">
+                <property name="text">
+                 <string>用户 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="userEdit">
+                <property name="locale">
+                 <locale language="Chinese" country="China"/>
+                </property>
+                <property name="inputMask">
+                 <string notr="true"/>
+                </property>
+                <property name="text">
+                 <string>zzdever</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="pwLayout">
+              <item>
+               <widget class="QLabel" name="pwLabel">
+                <property name="text">
+                 <string>密码 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="pwEdit">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="buttonLayout">
+              <property name="leftMargin">
+               <number>50</number>
+              </property>
+              <property name="rightMargin">
+               <number>50</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="loginButton">
+                <property name="text">
+                 <string>登录</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="logoutButton">
+                <property name="text">
+                 <string>注销</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLabel" name="logInfoLabel">
+              <property name="text">
+               <string>未登录!!!</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="insertTab">
+         <attribute name="title">
+          <string>入库</string>
+         </attribute>
+         <layout class="QGridLayout" name="insertTabLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="singleInsertLabel">
+            <property name="text">
+             <string>单本入库 : </string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <layout class="QGridLayout" name="singleInsertLayout">
+            <property name="leftMargin">
+             <number>10</number>
+            </property>
+            <property name="rightMargin">
+             <number>10</number>
+            </property>
+            <property name="horizontalSpacing">
+             <number>10</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>20</number>
+            </property>
+            <item row="0" column="0">
+             <layout class="QHBoxLayout" name="bnoLayout">
+              <item>
+               <widget class="QLabel" name="bnoLabel">
+                <property name="text">
+                 <string>书号: </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="bnoEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QHBoxLayout" name="categoryLayout">
+              <item>
+               <widget class="QLabel" name="categoryLabel">
+                <property name="text">
+                 <string>类别 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="categoryEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <layout class="QHBoxLayout" name="titleLayout">
+              <item>
+               <widget class="QLabel" name="titleLabel">
+                <property name="text">
+                 <string>书名 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="titleEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="1">
+             <layout class="QHBoxLayout" name="pressLayout">
+              <item>
+               <widget class="QLabel" name="pressLabel">
+                <property name="text">
+                 <string>出版社 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="pressEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="0">
+             <layout class="QHBoxLayout" name="yearLayout">
+              <item>
+               <widget class="QLabel" name="yearLabel">
+                <property name="text">
+                 <string>年份 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="yearEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="1">
+             <layout class="QHBoxLayout" name="authorLayout">
+              <item>
+               <widget class="QLabel" name="authorLabel">
+                <property name="text">
+                 <string>作者 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="authorEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="3" column="0">
+             <layout class="QHBoxLayout" name="priceLayout">
+              <item>
+               <widget class="QLabel" name="priceLabel">
+                <property name="text">
+                 <string>价格 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="priceEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="3" column="1">
+             <layout class="QHBoxLayout" name="totalLayout">
+              <item>
+               <widget class="QLabel" name="totalLabel">
+                <property name="text">
+                 <string>数量</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="totalEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <widget class="QPushButton" name="singleInsertButton">
+              <property name="text">
+               <string>入库</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="muliInsertLabel">
+            <property name="text">
+             <string>批量入库 : </string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="muliInsertButton">
+            <property name="text">
+             <string>选择文件</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="selectTab">
+         <attribute name="title">
+          <string>查询</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="selectTabLayout">
+          <item>
+           <layout class="QGridLayout" name="selectInfoLayout">
+            <item row="2" column="2">
+             <widget class="QPushButton" name="selectButton">
+              <property name="text">
+               <string>查询</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <layout class="QHBoxLayout" name="priceSelectLayout">
+              <item>
+               <widget class="QLabel" name="priceSelectLabel">
+                <property name="text">
+                 <string>价格 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="priceFromSpin">
+                <property name="maximum">
+                 <double>9999.000000000000000</double>
+                </property>
+                <property name="singleStep">
+                 <double>0.100000000000000</double>
+                </property>
+                <property name="value">
+                 <double>0.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="priceToLabel">
+                <property name="text">
+                 <string>到</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="priceToSpin">
+                <property name="maximum">
+                 <double>9999.000000000000000</double>
+                </property>
+                <property name="singleStep">
+                 <double>0.100000000000000</double>
+                </property>
+                <property name="value">
+                 <double>100.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <layout class="QHBoxLayout" name="yearSelectLayout">
+              <item>
+               <widget class="QLabel" name="yearSelectLabel">
+                <property name="text">
+                 <string>年份 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="yearFromSpin">
+                <property name="maximum">
+                 <number>2100</number>
+                </property>
+                <property name="value">
+                 <number>1900</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="yearToLabel">
+                <property name="text">
+                 <string>到</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="yearToSpin">
+                <property name="maximum">
+                 <number>2100</number>
+                </property>
+                <property name="value">
+                 <number>2014</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QHBoxLayout" name="pressSeclectLayout">
+              <item>
+               <widget class="QLabel" name="pressSelectLabel">
+                <property name="text">
+                 <string>出版社 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="pressSelectEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QHBoxLayout" name="titleSelectLayout">
+              <item>
+               <widget class="QLabel" name="titleSelectLabel">
+                <property name="text">
+                 <string>书名 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="titleSelectEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="1">
+             <layout class="QHBoxLayout" name="authorSelectLayout">
+              <item>
+               <widget class="QLabel" name="authorSelectLabel">
+                <property name="text">
+                 <string>作者 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="authorSelectEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="0">
+             <layout class="QHBoxLayout" name="categorySelectLayout">
+              <item>
+               <widget class="QLabel" name="categorySelectLabel_2">
+                <property name="text">
+                 <string>类别 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="categorySelectEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="0">
+             <layout class="QHBoxLayout" name="isbnSelectLayout">
+              <item>
+               <widget class="QLabel" name="isbnSelectLabel">
+                <property name="text">
+                 <string>ISBN : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="isbnSelectEdit"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="bookTable">
+            <column>
+             <property name="text">
+              <string>书号</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>类别</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>书名</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>出版社</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>年份</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>作者</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>价格</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>总藏书量</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>库存</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="borrowTab">
+         <attribute name="title">
+          <string>借书</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="borrowTabLayout">
+          <property name="spacing">
+           <number>20</number>
+          </property>
+          <property name="leftMargin">
+           <number>20</number>
+          </property>
+          <property name="topMargin">
+           <number>20</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
+          <property name="bottomMargin">
+           <number>20</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="borrowCardLayout">
+            <item>
+             <widget class="QLabel" name="borrowCardLabel">
+              <property name="text">
+               <string>输入借书证号 : </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="borrowCardEdit"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="borrowCardButton">
+              <property name="text">
+               <string>查询</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="borrowCardTable">
+            <column>
+             <property name="text">
+              <string>借书证号</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>书号</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>借阅时间</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>归还时间</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>超时罚款</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>经手人</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="borrowLayout">
+            <item>
+             <widget class="QLabel" name="borrowLabel">
+              <property name="text">
+               <string>书号 : </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="borrowEdit"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="borrowButton">
+              <property name="text">
+               <string>借阅</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="returnTab">
+         <attribute name="title">
+          <string>还书</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="returnTabLayout">
+          <property name="spacing">
+           <number>20</number>
+          </property>
+          <property name="leftMargin">
+           <number>20</number>
+          </property>
+          <property name="topMargin">
+           <number>20</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
+          <property name="bottomMargin">
+           <number>20</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="returnCardLayout">
+            <item>
+             <widget class="QLabel" name="returnCardLabel">
+              <property name="text">
+               <string>输入借书证号 : </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="returnCardEdit"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="returnCardButton">
+              <property name="text">
+               <string>查询</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="returnCardTable">
+            <column>
+             <property name="text">
+              <string>借书证号</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>书号</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>借阅时间</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>归还时间</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>超时罚款</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>经手人</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="returnLayout">
+            <item>
+             <widget class="QLabel" name="returnLabel">
+              <property name="text">
+               <string>书号 : </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="returnEdit"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="returnButton">
+              <property name="text">
+               <string>归还</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="cardTab">
+         <attribute name="title">
+          <string>借书证管理</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="cardTabLayout">
+          <property name="spacing">
+           <number>30</number>
+          </property>
+          <property name="leftMargin">
+           <number>20</number>
+          </property>
+          <property name="topMargin">
+           <number>20</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
+          <property name="bottomMargin">
+           <number>20</number>
+          </property>
+          <item>
+           <layout class="QGridLayout" name="cardInsertLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="cardInsertLabel">
+              <property name="text">
+               <string>增加借书证 : </string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <layout class="QHBoxLayout" name="cnoInsertLayout">
+              <item>
+               <widget class="QLabel" name="cnoInsertLabel">
+                <property name="text">
+                 <string>卡号 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="cnoInsertEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QHBoxLayout" name="nameInsertLayout">
+              <item>
+               <widget class="QLabel" name="nameInsertLabel">
+                <property name="text">
+                 <string>姓名 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="nameInsertEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="1">
+             <layout class="QHBoxLayout" name="depInsertLayout">
+              <item>
+               <widget class="QLabel" name="depInsertLabel">
+                <property name="text">
+                 <string>部门 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="depInsertEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="2">
+             <layout class="QHBoxLayout" name="typeInsertLayout">
+              <item>
+               <widget class="QLabel" name="typeInsertLabel">
+                <property name="text">
+                 <string>类型 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="typeInsertEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="2">
+             <widget class="QPushButton" name="cardInsertButton">
+              <property name="text">
+               <string>增加借书证</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="cardDeleteLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="cardDeleteLabel">
+              <property name="text">
+               <string>删除借书证 : </string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <layout class="QHBoxLayout" name="cnoDeleteLayout">
+              <item>
+               <widget class="QLabel" name="cnoDeleteLabel">
+                <property name="text">
+                 <string>卡号 : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="cnoDeleteEdit"/>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <widget class="QPushButton" name="cardDeleteButton">
+              <property name="text">
+               <string>删除借书证</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="title">
+          <string>关于</string>
+         </attribute>
+         <widget class="QLabel" name="label">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>30</y>
+            <width>157</width>
+            <height>19</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>121</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>简洁图书馆管理客户端</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_2">
+          <property name="geometry">
+           <rect>
+            <x>260</x>
+            <y>60</y>
+            <width>81</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Version: 0.1</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_3">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>120</y>
+            <width>261</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>261</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>ppaanngggg: ppaanngggg@gmail.com</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>160</y>
+            <width>171</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>子政: zzdever@gmail.com</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_5">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>370</y>
+            <width>111</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>无所保留，自由传播</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_6">
+          <property name="geometry">
+           <rect>
+            <x>280</x>
+            <y>400</y>
+            <width>57</width>
+            <height>15</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>2014.3</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
